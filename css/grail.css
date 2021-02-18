@@ -17,14 +17,12 @@ CONTENTS:
   7  Utilities
 
 */
-
 /*
 -------------------------------------------------------------------------------
 1  Normalize CSS
 Credits: normalize.css | MIT License | github.com/necolas/normalize.css
 -------------------------------------------------------------------------------
 */
-
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -108,7 +106,7 @@ textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
-  margin: 0; 
+  margin: 0;
 }
 
 button,
@@ -152,7 +150,8 @@ legend {
   color: inherit;
   display: table;
   max-width: 100%;
-  padding: 0; /* 3 */
+  padding: 0;
+  /* 3 */
   white-space: normal;
 }
 
@@ -206,45 +205,41 @@ template {
 }
 
 /*
--------------------------------------------------------------------------------
-2  CSS variables (CSS custom properties)
--------------------------------------------------------------------------------
-*/
-
+  -------------------------------------------------------------------------------
+  2  CSS variables (CSS custom properties)
+  -------------------------------------------------------------------------------
+  */
 :root {
   /* Colors */
   --bg-color: #ffffff;
   --low-contrast-color: #ececec;
   --mid-contrast-color: #9e9e9e;
   --high-contrast-color: #4b4b4b;
+  --lighter-primary-color: #1972d8;
   --primary-color: #1258a8;
+  --darker-primary-color: #0e427e;
   --error-color: #b13030;
   --success-color: #449938;
   --base-font-color: #333333;
-
   --darkmode-bg-color: #000000;
   --darkmode-low-contrast-color: #4b4b4b;
   --darkmode-mid-contrast-color: #9e9e9e;
   --darkmode-high-contrast-color: #ececec;
   --darkmode-base-font-color: #eeeeee;
-  
   /* Sizes */
   --max-width: 120rem;
   --gutter: 2rem;
-
   /* Fonts */
   --font-size: 1.5rem;
   --font-family-sans: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
-    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-    "Droid Sans", "Helvetica Neue", sans-serif;
+      "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+      "Droid Sans", "Helvetica Neue", sans-serif;
   --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
-  
   /* zIndex */
   --z1: 1;
   --z2: 2;
   --z3: 3;
   --z4: 4;
-
   /* Border radius */
   --border-radius-sm: 2px;
   --border-radius-md: 4px;
@@ -252,8 +247,8 @@ template {
 }
 
 body {
-background-color: var(--bg-color);
-color: var(--base-font-color);
+  background-color: var(--bg-color);
+  color: var(--base-font-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -264,30 +259,35 @@ color: var(--base-font-color);
 }
 
 /*
--------------------------------------------------------------------------------
-3  Typography
--------------------------------------------------------------------------------
-*/
-
+  -------------------------------------------------------------------------------
+  3  Typography
+  -------------------------------------------------------------------------------
+  */
 a {
   color: var(--primary-color);
 }
 
-.b  { font-weight: var(--bold-font-weight, bold) }
-.i  { font-style: italic }
+.a-l {
+  text-align: left;
+}
 
-.a-l  { text-align: left }
-.a-c  { text-align: center }
-.a-r  { text-align: right }
+.a-c {
+  text-align: center;
+}
 
-.u { text-decoration: underline }
+.a-r {
+  text-align: right;
+}
+
+.u {
+  text-decoration: underline;
+}
 
 /*
--------------------------------------------------------------------------------
-4  Layout
--------------------------------------------------------------------------------
-*/
-
+  -------------------------------------------------------------------------------
+  4  Layout
+  -------------------------------------------------------------------------------
+  */
 .w {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -312,8 +312,8 @@ a {
 }
 
 .c,
-  [class*=" c-"],
-  [class^='c-'] {
+[class*=" c-"],
+[class^='c-'] {
   margin: 0 calc(var(--gutter) / 2) calc(var(--gutter) / 2);
 }
 
@@ -378,14 +378,15 @@ a {
 }
 
 /*
--------------------------------------------------------------------------------
-5  Forms
--------------------------------------------------------------------------------
-*/
+  -------------------------------------------------------------------------------
+  5  Forms
+  -------------------------------------------------------------------------------
+  */
 .f label {
   display: inline-block;
   margin-bottom: 0.5em;
 }
+
 .f input[type="text"],
 .f input[type="password"],
 .f input[type="email"],
@@ -428,18 +429,17 @@ a {
   .f input[type="color"],
   .f select,
   .f textarea {
-      background-color: var(--darkmode-low-contrast-color);
-      border: 1px solid var(--darkmode-low-contrast-color);
-      color: var(--darkmode-base-font-color);
+    background-color: var(--darkmode-low-contrast-color);
+    border: 1px solid var(--darkmode-low-contrast-color);
+    color: var(--darkmode-base-font-color);
   }
 }
 
 /*
--------------------------------------------------------------------------------
-6  Tables
--------------------------------------------------------------------------------
-*/
-
+  -------------------------------------------------------------------------------
+  6  Tables
+  -------------------------------------------------------------------------------
+  */
 .t {
   border-collapse: collapse;
   border-spacing: 0;
@@ -472,21 +472,63 @@ a {
 }
 
 /*
--------------------------------------------------------------------------------
-7  Utilities
--------------------------------------------------------------------------------
-*/
+  -------------------------------------------------------------------------------
+  7  Buttons
+  -------------------------------------------------------------------------------
+  */
+.b {
+  padding: 0.5em 0.6em;
+  display: inline-block;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  text-decoration: none;
+}
 
+.b:hover {
+  background-color: var(--lighter-primary-color);
+}
+
+.b:active {
+  background-color: var(--darker-primary-color);
+}
+
+/*
+  -------------------------------------------------------------------------------
+  8  Utilities
+  -------------------------------------------------------------------------------
+  */
 .h,
 [hidden] {
   display: none !important;
 }
 
-.p-r { position: relative }
-.p-a { position: absolute }
-.p-f    { position: fixed }
+.p-r {
+  position: relative;
+}
 
-.z-1 { z-index: var(--z1) }
-.z-2 { z-index: var(--z2) }
-.z-3 { z-index: var(--z3) }
-.z-4 { z-index: var(--z4) }
+.p-a {
+  position: absolute;
+}
+
+.p-f {
+  position: fixed;
+}
+
+.z-1 {
+  z-index: var(--z1);
+}
+
+.z-2 {
+  z-index: var(--z2);
+}
+
+.z-3 {
+  z-index: var(--z3);
+}
+
+.z-4 {
+  z-index: var(--z4);
+}
+
+/*# sourceMappingURL=grail.css.map */
