@@ -1,6 +1,6 @@
 {
     "name": "grailcss",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Simple, no bullshit CSS helpers, resets & utilities.",
     "main": "css/grail.css",
     "scripts": {
