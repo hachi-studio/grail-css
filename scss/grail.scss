@@ -256,6 +256,7 @@ html {
   body {
   background-color: var(--bg-color);
   color: var(--base-font-color);
+  font-family: var(--font-family-sans);
   }
   
   @media (prefers-color-scheme: dark) {
