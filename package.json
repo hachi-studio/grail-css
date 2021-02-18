@@ -4,12 +4,11 @@
   "description": "Simple, no bullshit CSS helpers, resets & utilities.",
   "main": "css/grail.css",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "yarn run build-sass && yarn run minify",
+    "build-sass": "node-sass --output-style expanded --source-map true scss/grail.scss css/grail.css",
+    "minify": "postcss css/grail.css -u cssnano -o css/grail.min.css --no-map"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hachi-studio/grail-css.git"
-  },
+  "repository": "git+https://github.com/hachi-studio/grail-css.git",
   "keywords": [
     "grail",
     "css",
@@ -22,5 +21,13 @@
   "bugs": {
     "url": "https://github.com/hachi-studio/grail-css/issues"
   },
-  "homepage": "https://github.com/hachi-studio/grail-css#readme"
+  "homepage": "https://github.com/hachi-studio/grail-css#readme",
+  "devDependencies": {
+    "cssnano": "^4.1.10",
+    "postcss-cli": "^7.1.1"
+  },
+  "private": false,
+  "dependencies": {
+    "node-sass": "^5.0.0"
+  }
 }
