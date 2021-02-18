@@ -6,7 +6,7 @@ Author: Hachi (https://hachi.studio)
 Licensed under MIT
 -------------------------------------------------------------------------------
 
-CONTENTS
+CONTENTS:
 
   1  Normalize
   2  CSS Variables
@@ -14,7 +14,10 @@ CONTENTS
   4  Forms
   5  Tables
   6  Utilities
+
 */
+
+
 
 /*
 -------------------------------------------------------------------------------
@@ -212,12 +215,17 @@ html {
 :root {
     /* Colors */
     --bg-color: #ffffff;
-    --light-color: #ececec;
-    --dark-color: #4b4b4b;
+    --low-contrast-color: #ececec;
+    --high-contrast-color: #4b4b4b;
     --primary-color: #284ec9;
     --error-color: #d43939;
     --success-color: #28bd14;
-    --font-color: #333333;
+    --base-font-color: #333333;
+
+    --darkmode-bg-color: #ffffff;
+    --darkmode-low-contrast-color: #4b4b4b;
+    --darkmode-high-contrast-color: #ececec;
+    --darkmode-base-font-color: #eeeeee;
     /* Sizes */
     --max-width: 120rem;
     --gutter: 2rem;
@@ -232,6 +240,11 @@ html {
     --z2: 2;
     --z3: 3;
     --z4: 4;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--base-font-color);
 }
 
 /*
@@ -431,3 +444,10 @@ html {
 .z-2 { z-index: var(--z2) }
 .z-3 { z-index: var(--z3) }
 .z-4 { z-index: var(--z4) }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--darkmode-bg-color);
+    color: var(--darkmode-base-font-color);
+  }
+}
