@@ -231,9 +231,8 @@ template {
   --gutter: 2rem;
   /* Fonts */
   --font-size: 1.5rem;
-  --font-family-sans: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next",
-      "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
-      "Droid Sans", "Helvetica Neue", sans-serif;
+  --font-family-sans: -apple-system, BlinkMacSystemFont, Avenir, "Avenir Next", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   --font-family-mono: monaco, "Consolas", "Lucida Console", monospace;
   /* zIndex */
   --z1: 1;
@@ -246,13 +245,16 @@ template {
   --border-radius-lg: 8px;
 }
 
-body {
+body,
+.bg-c {
   background-color: var(--bg-color);
   color: var(--base-font-color);
+  font-family: var(--font-family-sans);
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
+  body,
+  .bg-c {
     background-color: var(--darkmode-bg-color);
     color: var(--darkmode-base-font-color);
   }
@@ -291,7 +293,7 @@ a {
 .w {
   max-width: var(--max-width);
   margin: 0 auto;
-  width: 96%;
+  width: calc(100% - (var(--gutter) / 1));
   padding: 0 calc(var(--gutter) / 2);
 }
 
@@ -313,68 +315,68 @@ a {
 
 .c,
 [class*=" c-"],
-[class^='c-'] {
+[class^="c-"] {
   margin: 0 calc(var(--gutter) / 2) calc(var(--gutter) / 2);
 }
 
 .c-1 {
-  flex: 0 0 calc((100% / (12/1)) - var(--gutter));
-  max-width: calc((100% / (12/1)) - var(--gutter));
+  flex: 0 0 calc((100% / (12 / 1)) - var(--gutter));
+  max-width: calc((100% / (12 / 1)) - var(--gutter));
 }
 
 .c-2 {
-  flex: 0 0 calc((100% / (12/2)) - var(--gutter));
-  max-width: calc((100% / (12/2)) - var(--gutter));
+  flex: 0 0 calc((100% / (12 / 2)) - var(--gutter));
+  max-width: calc((100% / (12 / 2)) - var(--gutter));
 }
 
 .c-3 {
-  flex: 0 0 calc((100% / (12/3)) - var(--gutter));
-  max-width: calc((100% / (12/3)) - var(--gutter));
+  flex: 0 0 calc((100% / (12 / 3)) - var(--gutter));
+  max-width: calc((100% / (12 / 3)) - var(--gutter));
 }
 
 .c-4 {
-  flex: 0 0 calc((100% / (12/4)) - var(--gutter));
-  max-width: calc((100% / (12/4)) - var(--gutter));
+  flex: 0 0 calc((100% / (12 / 4)) - var(--gutter));
+  max-width: calc((100% / (12 / 4)) - var(--gutter));
 }
 
 .c-5 {
-  flex: 0 0 calc((100% / (12/5)) - var(--gutter));
-  max-width: calc((100% / (12/5)) - var(--gutter));
+  flex: 0 0 calc((100% / (12 / 5)) - var(--gutter));
+  max-width: calc((100% / (12 / 5)) - var(--gutter));
 }
 
 .c-6 {
-  flex: 0 0 calc((100% / (12/6)) - var(--gutter));
-  max-width: calc((100% / (12/6)) - var(--gutter));
+  flex: 0 0 calc((100% / (12 / 6)) - var(--gutter));
+  max-width: calc((100% / (12 / 6)) - var(--gutter));
 }
 
 .c-7 {
-  flex: 0 0 calc((100% / (12/7)) - var(--gutter));
-  max-width: calc((100% / (12/7)) - var(--gutter));
+  flex: 0 0 calc((100% / (12 / 7)) - var(--gutter));
+  max-width: calc((100% / (12 / 7)) - var(--gutter));
 }
 
 .c-8 {
-  flex: 0 0 calc((100% / (12/8)) - var(--gutter));
-  max-width: calc((100% / (12/8)) - var(--gutter));
+  flex: 0 0 calc((100% / (12 / 8)) - var(--gutter));
+  max-width: calc((100% / (12 / 8)) - var(--gutter));
 }
 
 .c-9 {
-  flex: 0 0 calc((100% / (12/9)) - var(--gutter));
-  max-width: calc((100% / (12/9)) - var(--gutter));
+  flex: 0 0 calc((100% / (12 / 9)) - var(--gutter));
+  max-width: calc((100% / (12 / 9)) - var(--gutter));
 }
 
 .c-10 {
-  flex: 0 0 calc((100% / (12/10)) - var(--gutter));
-  max-width: calc((100% / (12/10)) - var(--gutter));
+  flex: 0 0 calc((100% / (12 / 10)) - var(--gutter));
+  max-width: calc((100% / (12 / 10)) - var(--gutter));
 }
 
 .c-11 {
-  flex: 0 0 calc((100% / (12/11)) - var(--gutter));
-  max-width: calc((100% / (12/11)) - var(--gutter));
+  flex: 0 0 calc((100% / (12 / 11)) - var(--gutter));
+  max-width: calc((100% / (12 / 11)) - var(--gutter));
 }
 
 .c-12 {
-  flex: 0 0 calc((100% / (12/12)) - var(--gutter));
-  max-width: calc((100% / (12/12)) - var(--gutter));
+  flex: 0 0 calc((100% / (12 / 12)) - var(--gutter));
+  max-width: calc((100% / (12 / 12)) - var(--gutter));
 }
 
 /*
@@ -515,6 +517,10 @@ a {
   position: fixed;
 }
 
+.p-s {
+  position: sticky;
+}
+
 .z-1 {
   z-index: var(--z1);
 }
@@ -529,6 +535,22 @@ a {
 
 .z-4 {
   z-index: var(--z4);
+}
+
+.d-b {
+  display: block;
+}
+
+.d-g {
+  display: grid;
+}
+
+.d-f {
+  display: flex;
+}
+
+.d-i {
+  display: inline;
 }
 
 /*# sourceMappingURL=grail.css.map */
