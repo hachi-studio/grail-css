@@ -277,6 +277,7 @@ a {
   color: var(--primary-color);
 }
 
+
 .a-l {
   text-align: left;
 }
@@ -522,6 +523,10 @@ a {
   position: fixed;
 }
 
+.p-s {
+  position: sticky;
+}
+
 .z-1 {
   z-index: var(--z1);
 }
@@ -533,4 +538,20 @@ a {
 }
 .z-4 {
   z-index: var(--z4);
+}
+
+.d-b {
+  display: block;
+}
+
+.d-g {
+  display: grid;
+}
+
+.d-f {
+  display: flex;
+}
+
+.d-i {
+  display: inline;
 }
